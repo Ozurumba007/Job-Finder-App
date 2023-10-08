@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:job_search_app/component/custom_app_bar.dart';
 
+import '../component/custom_textfield.dart';
+
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -15,47 +17,39 @@ class _HomeScreenState extends State<HomeScreen> {
       // backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.0),
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
 
               // Custom app bar
-              CustomAppBar(),
+              const CustomAppBar(),
 
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Headline Text
-              Text(
+              const Text(
                 'Find a job you are\ninterested in',
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              SizedBox(height: 20),
+
+              // Textfield widget
+
+              const SizedBox(height: 20),
+              const CustomTextField(),
+
+              // Container (Lets find a job for you + button +image),
+
+              const SizedBox(height: 20),
               Container(
+                height: 120,
+                width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-                  color: Colors.grey[200],
-                ),
-                child: const TextField(
-                  decoration: InputDecoration(
-                    prefixIcon: Icon(
-                      Icons.search,
-                      color: Colors.black,
-                    ),
-                    suffixIcon: Icon(
-                      Icons.filter_list,
-                      color: Colors.black,
-                    ),
-                    hintText: 'Search jobs, company, city ',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(12),
-                      ),
-                    ),
-                  ),
+                  color: Colors.blue.shade200,
                 ),
               ),
             ],
