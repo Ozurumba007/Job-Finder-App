@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:job_search_app/component/custom_app_bar.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,26 +11,20 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          // Custom app bar
-
-          Row(
+    return const Scaffold(
+      // backgroundColor: Colors.white,
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.0),
+          child: Column(
             children: [
-              Container(
-                height: 50,
-                width: 50,
-              ),
-              Column(
-                children: [
-                  Text('Good Morning'),
-                  Text('Ozurumba Onwuasoanya'),
-                ],
-              ),
+              SizedBox(height: 10),
+
+              // Custom app bar
+              CustomAppBar(),
             ],
-          )
-        ],
+          ),
+        ),
       ),
     );
   }
