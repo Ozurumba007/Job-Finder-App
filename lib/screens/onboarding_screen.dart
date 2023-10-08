@@ -37,7 +37,6 @@ class OnboardingScreen extends StatelessWidget {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        // SizedBox(height: 20),
                         // title of the onbarding screen
                         Text(
                           'Shape Your Future\nWith Job Opportunities',
@@ -47,7 +46,7 @@ class OnboardingScreen extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                        // SizedBox(height: 20),
+
                         // subTitle of the onbarding screen
                         Text(
                           'Discover a vast selection of over 30,000\njob opportunities to supercharge your\ncareer path today.',
@@ -58,6 +57,8 @@ class OnboardingScreen extends StatelessWidget {
                             color: Colors.grey[500],
                           ),
                         ),
+
+                        // Custom Button
                         Padding(
                           padding: const EdgeInsets.symmetric(horizontal: 10.0),
                           child: Container(
