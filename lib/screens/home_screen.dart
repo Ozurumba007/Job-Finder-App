@@ -19,10 +19,11 @@ class _HomeScreenState extends State<HomeScreen> {
   List jobList = [
     // air bnb job
     Job(
-        titleOfJob: 'UI/UX Designer',
-        imagePath: 'assets/airbnb.png',
-        jobLocation: 'Airbnb . New York',
-        color: Colors.red.shade200),
+      titleOfJob: 'UI/UX Designer',
+      imagePath: 'assets/airbnb.png',
+      jobLocation: 'Airbnb . New York',
+      color: Colors.red.shade200,
+    ),
 
     // whatsapp job
     Job(
@@ -93,15 +94,43 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                 ],
               ),
+              const SizedBox(height: 10),
 
               // Newest Matches
-              Expanded(
+              Container(
+                height: 150,
                 child: ListView.builder(
                   itemCount: jobList.length,
+                  scrollDirection: Axis.horizontal,
                   itemBuilder: (context, index) => JobMenu(
                     job: jobList[index],
                   ),
                 ),
+              ),
+
+              // Recent Job + see all
+
+              const SizedBox(height: 10),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Recent Job',
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Text(
+                    'See all',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.grey[500],
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
