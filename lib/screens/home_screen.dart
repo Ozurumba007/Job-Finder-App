@@ -41,107 +41,110 @@ class _HomeScreenState extends State<HomeScreen> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 20.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: 10),
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 10),
 
-              // Custom app bar
-              const CustomAppBar(),
+                // Custom app bar
+                const CustomAppBar(),
 
-              const SizedBox(height: 20),
-              // Headline Text
-              const Text(
-                'Find a job you are\ninterested in',
-                style: TextStyle(
-                  fontSize: 30,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-
-              // Textfield widget
-
-              const SizedBox(height: 20),
-              const CustomTextField(),
-
-              // Container (Lets find a job for you + button +image),
-
-              const SizedBox(height: 20),
-
-              const FindAJobContainer(),
-
-              // Newest matches + see all
-
-              const SizedBox(height: 10),
-
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    'Your Newest Matches',
-                    style: TextStyle(
-                      fontSize: 17,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                  Text(
-                    'See all',
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.grey[500],
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 10),
-
-              // Newest Matches
-              Container(
-                height: 150,
-                child: ListView.builder(
-                  itemCount: jobList.length,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => JobMenu(
-                    job: jobList[index],
+                const SizedBox(height: 20),
+                // Headline Text
+                const Text(
+                  'Find a job you are\ninterested in',
+                  style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
                   ),
                 ),
-              ),
 
-              // Recent Job + see all
+                // Textfield widget
 
-              const SizedBox(height: 10),
+                const SizedBox(height: 20),
+                const CustomTextField(),
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    'Recent Job',
-                    style: TextStyle(
-                      fontSize: 17,
-                      fontWeight: FontWeight.w600,
+                // Container (Lets find a job for you + button +image),
+
+                const SizedBox(height: 20),
+
+                const FindAJobContainer(),
+
+                // Newest matches + see all
+
+                const SizedBox(height: 10),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Your Newest Matches',
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(
+                      'See all',
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.grey[500],
+                      ),
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 10),
+
+                // Newest Matches
+                Container(
+                  height: 150,
+                  child: ListView.builder(
+                    itemCount: jobList.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context, index) => JobMenu(
+                      job: jobList[index],
                     ),
                   ),
-                  Text(
-                    'See all',
-                    style: TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w400,
-                      color: Colors.grey[500],
-                    ),
-                  ),
-                ],
-              ),
+                ),
 
-              const SizedBox(height: 10),
-            ],
+                // Recent Job + see all
+
+                const SizedBox(height: 10),
+
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Recent Job',
+                      style: TextStyle(
+                        fontSize: 17,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(
+                      'See all',
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.w400,
+                        color: Colors.grey[500],
+                      ),
+                    ),
+                  ],
+                ),
+
+                const SizedBox(height: 10),
+              ],
+            ),
           ),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        items: const [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.home_rounded), label: 'Home'),
           BottomNavigationBarItem(
               icon: Icon(Icons.wallet_giftcard), label: 'Jobs'),
           BottomNavigationBarItem(icon: Icon(Icons.message), label: 'Message'),

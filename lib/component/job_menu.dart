@@ -77,12 +77,12 @@ class JobMenu extends StatelessWidget {
                     color: Colors.grey[300],
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: const Padding(
+                  child: Padding(
                     padding: EdgeInsets.all(10.0),
                     child: Text(
                       'Full-Time',
                       style: TextStyle(
-                          fontWeight: FontWeight.w600, color: Colors.grey),
+                          fontWeight: FontWeight.w600, color: Colors.grey[700]),
                     ),
                   ),
                 ),
@@ -92,13 +92,13 @@ class JobMenu extends StatelessWidget {
                     color: Colors.grey[300],
                     borderRadius: BorderRadius.circular(12),
                   ),
-                  child: const Padding(
+                  child: Padding(
                     padding: EdgeInsets.all(10.0),
                     child: Text(
                       'Remote',
                       style: TextStyle(
                         fontWeight: FontWeight.w600,
-                        color: Colors.grey,
+                        color: Colors.grey[700],
                       ),
                     ),
                   ),
