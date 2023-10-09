@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:job_search_app/component/job_type.dart';
 
 import '../model/job.dart';
 
@@ -79,38 +80,9 @@ class JobMenu extends StatelessWidget {
               SizedBox(height: 15),
               Row(
                 children: [
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: Text(
-                        'Full-Time',
-                        style: TextStyle(
-                            fontWeight: FontWeight.w600,
-                            color: Colors.grey[700]),
-                      ),
-                    ),
-                  ),
+                  JobType(text: 'Full-Time'),
                   SizedBox(width: 15),
-                  Container(
-                    decoration: BoxDecoration(
-                      color: Colors.grey[300],
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    child: Padding(
-                      padding: EdgeInsets.all(10.0),
-                      child: Text(
-                        'Remote',
-                        style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          color: Colors.grey[700],
-                        ),
-                      ),
-                    ),
-                  ),
+                  JobType(text: 'Remote'),
                 ],
               ),
             ],

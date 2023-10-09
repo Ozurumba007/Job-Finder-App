@@ -42,7 +42,9 @@ class _HomeScreenState extends State<HomeScreen> {
     Navigator.push(
       context,
       MaterialPageRoute(
-        builder: (context) => JobDetailScreen(),
+        builder: (context) => JobDetailScreen(
+          job: jobList[index],
+        ),
       ),
     );
   }

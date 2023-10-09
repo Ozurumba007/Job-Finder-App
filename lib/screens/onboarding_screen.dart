@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
+import 'package:job_search_app/component/custom_button.dart';
 import 'package:job_search_app/screens/home_screen.dart';
 
 class OnboardingScreen extends StatelessWidget {
@@ -58,34 +59,16 @@ class OnboardingScreen extends StatelessWidget {
                       ),
 
                       // Custom Button
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10.0),
-                        child: GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => HomeScreen()),
-                            );
-                          },
-                          child: Container(
-                            height: 45,
-                            width: double.infinity,
-                            decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(20),
-                                color: Colors.blue.shade300),
-                            child: Center(
-                              child: Text(
-                                'Get Started',
-                                style: TextStyle(
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w500,
-                                  color: Colors.white,
-                                ),
-                              ),
+                      CustomButton(
+                        text: 'Get Started',
+                        onTap: () {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => HomeScreen(),
                             ),
-                          ),
-                        ),
+                          );
+                        },
                       ),
                     ],
                   ),
