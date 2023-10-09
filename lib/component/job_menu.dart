@@ -31,7 +31,7 @@ class JobMenu extends StatelessWidget {
                       width: 50,
                       decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.circular(5),
+                        borderRadius: BorderRadius.circular(10),
                         image: DecorationImage(
                           image: AssetImage(job.imagePath),
                         ),

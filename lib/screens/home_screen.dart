@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:job_search_app/component/custom_app_bar.dart';
+import 'package:job_search_app/component/list_tile.dart';
 import 'package:job_search_app/model/job.dart';
 
 import '../component/custom_textfield.dart';
@@ -135,6 +136,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
 
                 const SizedBox(height: 10),
+                const CustomListTile(
+                    imagePath: 'assets/duolingo.png',
+                    title: 'UI/UX Designer',
+                    subTitle: 'Tokopedia . Indonesia'),
               ],
             ),
           ),
