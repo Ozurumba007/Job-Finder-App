@@ -6,6 +6,7 @@ import 'package:job_search_app/model/job.dart';
 import '../component/custom_textfield.dart';
 import '../component/find_a_job_container.dart';
 import '../component/job_menu.dart';
+import 'job_detail_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -34,6 +35,17 @@ class _HomeScreenState extends State<HomeScreen> {
       color: Colors.green.shade200,
     ),
   ];
+
+  // navigate to the job details Page
+
+  void navigateToJobDetails(int index) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => JobDetailScreen(),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -106,6 +118,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) => JobMenu(
                       job: jobList[index],
+                      onTap: () => navigateToJobDetails(index),
                     ),
                   ),
                 ),
@@ -137,9 +150,10 @@ class _HomeScreenState extends State<HomeScreen> {
 
                 const SizedBox(height: 10),
                 const CustomListTile(
-                    imagePath: 'assets/duolingo.png',
-                    title: 'UI/UX Designer',
-                    subTitle: 'Tokopedia . Indonesia'),
+                  imagePath: 'assets/duolingo.png',
+                  title: 'UI/UX Designer',
+                  subTitle: 'Tokopedia . Indonesia',
+                ),
               ],
             ),
           ),
@@ -147,6 +161,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
+        unselectedItemColor: Colors.grey,
         items: const [
           BottomNavigationBarItem(
               icon: Icon(Icons.home_rounded), label: 'Home'),
