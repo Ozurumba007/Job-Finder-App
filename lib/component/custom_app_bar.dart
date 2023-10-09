@@ -16,6 +16,10 @@ class CustomAppBar extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
                 color: Colors.grey,
+                image: DecorationImage(
+                  image: AssetImage('assets/my_pic.jpg'),
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             SizedBox(width: 5),

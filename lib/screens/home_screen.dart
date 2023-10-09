@@ -14,22 +14,22 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       // backgroundColor: Colors.white,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.0),
+          padding: const EdgeInsets.symmetric(horizontal: 20.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
 
               // Custom app bar
-              CustomAppBar(),
+              const CustomAppBar(),
 
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               // Headline Text
-              Text(
+              const Text(
                 'Find a job you are\ninterested in',
                 style: TextStyle(
                   fontSize: 30,
@@ -39,14 +39,39 @@ class _HomeScreenState extends State<HomeScreen> {
 
               // Textfield widget
 
-              SizedBox(height: 20),
-              CustomTextField(),
+              const SizedBox(height: 20),
+              const CustomTextField(),
 
               // Container (Lets find a job for you + button +image),
 
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
 
-              FindAJobContainer(),
+              const FindAJobContainer(),
+
+              // Newest matches + see all
+
+              const SizedBox(height: 10),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Your Newest Matches',
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Text(
+                    'See all',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.grey[500],
+                    ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
